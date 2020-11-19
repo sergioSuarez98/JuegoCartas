@@ -2,8 +2,9 @@
 import UIKit
 
 class CardViewController: UIViewController {
-
+    var rondas = 0
     @IBOutlet var myCard: UIView!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class CardViewController: UIViewController {
     @IBOutlet weak var buton2: UIButton!
     @IBOutlet weak var buton1: UIButton!
     @IBOutlet weak var totalNum: UILabel!
+    @IBOutlet weak var rounds: UILabel!
+    
     func butonChange() {
         
         let num : Int = Int(buton1.title(for: .normal) ?? "") ?? 0
@@ -34,11 +37,12 @@ class CardViewController: UIViewController {
         } else {
             buton1.backgroundColor = UIColor.blue
         }
-            
-        
-        
-        
+      
     }
+    
+    /**
+     
+     */
     func butonChange2() {
         
         let num : Int = Int(buton2.title(for: .normal) ?? "") ?? 0
@@ -77,6 +81,8 @@ class CardViewController: UIViewController {
       
         calcular(num: num)
         butonChange()
+        rounds.text = "Puntuación: "+String(rondas)
+        rondas += 1
     }
     
     @IBAction func numberSwap2(_ sender: Any) {
@@ -92,8 +98,9 @@ class CardViewController: UIViewController {
             buton2.setTitle(newNum, for: .normal)
             calcular(num: num)
             butonChange2()
+            rounds.text = "Puntuación: "+String(rondas)
+            rondas += 1
     }
-    
-   
-    						
+
 }
+
