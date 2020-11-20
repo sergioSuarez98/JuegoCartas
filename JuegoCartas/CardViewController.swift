@@ -2,7 +2,8 @@
 import UIKit
 
 class CardViewController: UIViewController {
-    var rondas = 0
+    var rondas = 1
+    
     @IBOutlet var myCard: UIView!
     
     override func viewDidLoad() {
@@ -81,7 +82,7 @@ class CardViewController: UIViewController {
       
         calcular(num: num)
         butonChange()
-        rounds.text = "Puntuación: "+String(rondas)
+        rounds.text = "Rondas: "+String(rondas)
         rondas += 1
     }
     
@@ -98,7 +99,7 @@ class CardViewController: UIViewController {
             buton2.setTitle(newNum, for: .normal)
             calcular(num: num)
             butonChange2()
-            rounds.text = "Puntuación: "+String(rondas)
+            rounds.text = "Rondas: "+String(rondas)
             rondas += 1
     }
 
